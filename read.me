@@ -1,0 +1,33 @@
+#Welcome to OrdinanceAI!!!
+
+
+##Introduction
+This tools primary responsibility is to search the approved ordinances of Middletown, Delaware County PA using 
+an open source RAG and LLM.
+
+
+##Modes
+There are 3 modes: search, conflict and missing.
+
+###Search
+Performs semantic search and returns a summarized version of the top 3 paragraphs related to the user input.
+
+###Conflict
+Performs semantic search and reviews the output for conflicting information.
+
+###Missing
+Performs semantics search and reviews the output for missing information.
+
+##Known Issues
+Observation 1 - The missing and conflict searches are very wordy.
+Observation 2 - Latency negatively impacts the user experience - a product of using Llama3 as the LLM on my local.
+
+##Example Queries
+Semantic Search
+print(chat_twp("How many chickens am I allowed to keep?"))
+
+Conflict
+print(chat_twp("What are the rules covering junk vehicles on my property?", mode = 'conflict'))
+
+Missing
+print(chat_twp("How do I build a warehouse that holds magic lamps?", mode = 'missing'))
